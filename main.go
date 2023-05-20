@@ -12,7 +12,13 @@ import (
 func main() {
 	router := gin.Default()
 	router.POST("/upload", uploadImages)
+	router.GET("/test", testConnectivity)
 	router.Run(":8080")
+}
+fun testConnectivity(c *gin.Context){
+	fmt.Print("connection is fine")
+	c.JSON(http.StatusOK, gin.H{"message": fmt.Sprintf("you can now upload files")})
+
 }
 
 func uploadImages(c *gin.Context) {
