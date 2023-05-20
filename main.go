@@ -15,7 +15,7 @@ func main() {
 	router.GET("/test", testConnectivity)
 	router.Run(":8080")
 }
-fun testConnectivity(c *gin.Context){
+func testConnectivity(c *gin.Context){
 	fmt.Print("connection is fine")
 	c.JSON(http.StatusOK, gin.H{"message": fmt.Sprintf("you can now upload files")})
 
